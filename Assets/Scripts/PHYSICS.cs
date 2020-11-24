@@ -11,8 +11,9 @@ public class PHYSICS : MonoBehaviour
     public GameObject Bullet;
     public int  spinspeed;
     public int  fastspin;
-    public Rigidbody rb;
+    public Rigidbody2D rb;
     public float forceMult;
+    public int live;
 
     //Enter the Speed of the Bullet from the Component Inspector.
     public float Bullet_Forward_Force;
@@ -20,7 +21,7 @@ public class PHYSICS : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -55,6 +56,18 @@ public class PHYSICS : MonoBehaviour
         else
         {
         transform.Rotate(0, spinspeed, 0 * Time.deltaTime);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Boulder")
+        {
+            live -= 1;
+            if (live == 0)
+            {
+            Destroy(this.gameObject);
+            }
         }
     }
 }

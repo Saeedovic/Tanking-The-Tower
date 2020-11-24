@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class studying : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float forceMult;
+    bool heyyo;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        heyyo = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            heyyo = true;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (heyyo == true)
         {
 
         }
     }
 
-    void Launch()
-    {
-        rb.velocity = transform.forward * Time.deltaTime * -forceMult;
-    }
 }

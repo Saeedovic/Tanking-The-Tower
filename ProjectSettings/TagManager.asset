@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Missle
   - Wall
+  - Boulder
   layers:
   - Default
   - TransparentFX
