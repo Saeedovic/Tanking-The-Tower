@@ -5,26 +5,29 @@ using UnityEngine;
 public class deployBoulders : MonoBehaviour
 {
     public GameObject asteroidPrefab;
-    public float respawnTime = 1.0f;
+    public float randMin;
+    public float randMax;
     private Vector2 screenBounds;
+    private float respawnTime;
 
     // Use this for initialization
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        StartCoroutine(asteroidWave());
+        StartCoroutine(AsteroidWave());
     }
-    private void spawnEnemy()
+    private void SpawnEnemy()
     {
+        respawnTime = Random.Range(randMin, randMax);
         GameObject a = Instantiate(asteroidPrefab) as GameObject;
-        a.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+        a.transform.position = new Vector2(screenBounds.x * -4, Random.Range(-screenBounds.y, screenBounds.y));
     }
-    IEnumerator asteroidWave()
+    IEnumerator AsteroidWave()
     {
         while (true)
         {
             yield return new WaitForSeconds(respawnTime);
-            spawnEnemy();
+            SpawnEnemy();
         }
     }
 }
