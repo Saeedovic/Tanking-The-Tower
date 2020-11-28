@@ -6,14 +6,14 @@ public class PHYSICS : MonoBehaviour
 {
     //Drag in the Bullet Emitter from the Component Inspector.
     public GameObject Bullet_Emitter;
-
     //Drag in the Bullet Prefab from the Component Inspector.
-    public GameObject Bullet;
+    public GameObject missle;
     public int  spinspeed;
     public int  fastspin;
     public Rigidbody2D rb;
     public float forceMult;
     public int live;
+    public GameObject explosionPrefab;
 
     //Enter the Speed of the Bullet from the Component Inspector.
     public float Bullet_Forward_Force;
@@ -29,23 +29,13 @@ public class PHYSICS : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //The Bullet instantiation happens here.
-            GameObject Temporary_Bullet_Handler;
-            Temporary_Bullet_Handler = Instantiate(Bullet, Bullet_Emitter.transform.position, Bullet_Emitter.transform.rotation) as GameObject;
 
-            //Sometimes bullets may appear rotated incorrectly due to the way its pivot was set from the original modeling package.
-            //This is EASILY corrected here, you might have to rotate it from a different axis and or angle based on your particular mesh.
-            Temporary_Bullet_Handler.transform.Rotate(Vector3.forward);
-
-            //Retrieve the Rigidbody component from the instantiated Bullet and control it.
-            Rigidbody Temporary_RigidBody;
-            Temporary_RigidBody = Temporary_Bullet_Handler.GetComponent<Rigidbody>();
-
-            //Tell the bullet to be "pushed" forward by an amount set by Bullet_Forward_Force. 
-            Temporary_RigidBody.AddForce(transform.forward * Bullet_Forward_Force);
-
-            //Basic Clean Up, set the Bullets to self destruct after 10 Seconds, I am being VERY generous here, normally 3 seconds is plenty.
-            Destroy(Temporary_Bullet_Handler, 10.0f);
+            GameObject bullet;
+            bullet = Instantiate(missle, Bullet_Emitter.transform.position, Bullet_Emitter.transform.rotation) as GameObject;
+            Rigidbody2D bulletrb;
+            bulletrb = bullet.GetComponent<Rigidbody2D>();
+            bulletrb.velocity = transform.forward * Bullet_Forward_Force;
+            Destroy(bullet, 10);
 
             rb.velocity = transform.forward * Time.deltaTime * -forceMult;
         }
@@ -66,7 +56,9 @@ public class PHYSICS : MonoBehaviour
             live -= 1;
             if (live == 0)
             {
-            Destroy(this.gameObject);
+                Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);
+                Destroy(explosionPrefab.gameObject, 2);
+                Destroy(this.gameObject);
             }
         }
     }

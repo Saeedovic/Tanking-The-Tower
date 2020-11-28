@@ -135,6 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   score: 0
+  myPrefab: {fileID: 2743711473207495110, guid: f6d4adec7289c3241ac1da8b1ec4681c,
+    type: 3}
 --- !u!198 &6192482111515287111
 ParticleSystem:
   m_ObjectHideFlags: 0
