@@ -9,7 +9,7 @@ public class boulders : MonoBehaviour
     private Vector2 screenBounds;
     public int score;
     private ParticleSystem particles;
-
+    public GameObject myPrefab;
     void Start()
     {
         particles = this.GetComponent<ParticleSystem>();
@@ -33,23 +33,23 @@ public class boulders : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            var obj = new GameObject();
-            obj.AddComponent<ParticleSystem>();
-            obj.transform.position = this.transform.position;
-            Destroy(obj.gameObject,2);
+            Instantiate(myPrefab, this.transform.position, Quaternion.identity);
+            Destroy(myPrefab.gameObject, 2);
             Destroy(this.gameObject);
         }
-
         if(collision.gameObject.tag == "Missle")
         {
-            AddPoints();
+            score += 1;
+            Instantiate(myPrefab, this.transform.position, Quaternion.identity);
+            Destroy(myPrefab.gameObject, 2);
             Destroy(this.gameObject);
         }
+
     }
 
-    void AddPoints()
+    private void OnCollisionEnter(Collision collision)
     {
-        score++;
+        
     }
 
 }
