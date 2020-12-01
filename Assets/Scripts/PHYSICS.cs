@@ -10,10 +10,11 @@ public class PHYSICS : MonoBehaviour
     public GameObject missle;
     public int  spinspeed;
     public int  fastspin;
-    public Rigidbody2D rb;
+    public Rigidbody2D rbOfTank;
     public float forceMult;
     public int live;
     public GameObject explosionPrefab;
+    public int score = 0;
 
     //Enter the Speed of the Bullet from the Component Inspector.
     public float Bullet_Forward_Force;
@@ -21,7 +22,8 @@ public class PHYSICS : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rbOfTank = GetComponent<Rigidbody2D>();
+        Debug.Log(score);
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class PHYSICS : MonoBehaviour
             bulletrb.velocity = transform.forward * Bullet_Forward_Force;
             Destroy(bullet, 10);
 
-            rb.velocity = transform.forward * Time.deltaTime * -forceMult;
+            rbOfTank.velocity = transform.forward * Time.deltaTime * -forceMult;
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -47,6 +49,7 @@ public class PHYSICS : MonoBehaviour
         {
         transform.Rotate(0, spinspeed, 0 * Time.deltaTime);
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -61,5 +64,11 @@ public class PHYSICS : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    public void ScoreIncrement()
+    {
+        score++;
+        Debug.Log(score);
     }
 }

@@ -10,12 +10,14 @@ public class boulders : MonoBehaviour
     public int score;
     private ParticleSystem particles;
     public GameObject myPrefab;
+    PHYSICS playerScript;
     void Start()
     {
         particles = this.GetComponent<ParticleSystem>();
         rb = this.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(-speed, 0);
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PHYSICS>();
     }
 
     // Update is called once per frame
@@ -25,7 +27,6 @@ public class boulders : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        Debug.Log(score);
     }
 
     
@@ -35,21 +36,15 @@ public class boulders : MonoBehaviour
         {
             Instantiate(myPrefab, this.transform.position, Quaternion.identity);
             Destroy(myPrefab.gameObject, 2);
-            Destroy(this.gameObject);
-        }
+            Destroy(this.gameObject);        }
         if(collision.gameObject.tag == "Missle")
         {
-            score += 1;
             Instantiate(myPrefab, this.transform.position, Quaternion.identity);
             Destroy(myPrefab.gameObject, 2);
             Destroy(this.gameObject);
+            playerScript.ScoreIncrement();
         }
 
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
     }
 
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 public class deployBoulders : MonoBehaviour
 {
     public GameObject asteroidPrefab;
-    public float randMin;
-    public float randMax;
+    public int randMin;
+    public int randMax;
     private Vector2 screenBounds;
     private float respawnTime;
 
@@ -20,7 +20,7 @@ public class deployBoulders : MonoBehaviour
     {
         respawnTime = Random.Range(randMin, randMax);
         GameObject a = Instantiate(asteroidPrefab) as GameObject;
-        a.transform.position = new Vector2(screenBounds.x * -4, Random.Range(-screenBounds.y, screenBounds.y));
+        a.transform.position = new Vector2(screenBounds.x * -3, Random.Range(-screenBounds.y, screenBounds.y));
     }
     IEnumerator AsteroidWave()
     {
