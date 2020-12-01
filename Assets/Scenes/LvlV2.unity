@@ -400,10 +400,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet_Emitter: {fileID: 1217254132}
   missle: {fileID: 9094009511398482965, guid: ebc8ef3e1eaa76c44aacba4e5ec67bf4, type: 3}
-  spinspeed: 1
+  spinspeed: 5
   fastspin: 6
   rbOfTank: {fileID: 24064141}
-  forceMult: 500
+  forceMult: 1000
   live: 2
   explosionPrefab: {fileID: 2743711473207495110, guid: f6d4adec7289c3241ac1da8b1ec4681c,
     type: 3}
@@ -2308,6 +2308,7 @@ GameObject:
   - component: {fileID: 118143953}
   - component: {fileID: 118143957}
   - component: {fileID: 118143956}
+  - component: {fileID: 118143958}
   m_Layer: 0
   m_Name: Alpha Eureka
   m_TagString: Untagged
@@ -2428,6 +2429,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5085903
+--- !u!114 &118143958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118143951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d92f3d12332f6e48aec2bba4d0a2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &121017831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8228,6 +8241,7 @@ GameObject:
   - component: {fileID: 635313416}
   - component: {fileID: 635313420}
   - component: {fileID: 635313419}
+  - component: {fileID: 635313421}
   m_Layer: 0
   m_Name: Alpha
   m_TagString: Untagged
@@ -8351,6 +8365,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.9116117
+--- !u!114 &635313421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635313414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d92f3d12332f6e48aec2bba4d0a2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &637888917
 GameObject:
   m_ObjectHideFlags: 0
@@ -11535,6 +11561,7 @@ GameObject:
   - component: {fileID: 933597368}
   - component: {fileID: 933597367}
   - component: {fileID: 933597366}
+  - component: {fileID: 933597369}
   m_Layer: 0
   m_Name: Beta Zeta
   m_TagString: Untagged
@@ -11671,6 +11698,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.00000047683716}
   serializedVersion: 2
   m_Radius: 0.50000024
+--- !u!114 &933597369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933597361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d92f3d12332f6e48aec2bba4d0a2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &939412359 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 476893ca37405624c835218deedc81e9,
@@ -13461,6 +13500,7 @@ GameObject:
   - component: {fileID: 1115691078}
   - component: {fileID: 1115691077}
   - component: {fileID: 1115691076}
+  - component: {fileID: 1115691079}
   m_Layer: 0
   m_Name: Gamma Dadaros
   m_TagString: Untagged
@@ -13597,6 +13637,18 @@ CircleCollider2D:
   m_Offset: {x: -0.0000019073486, y: 0.00000023841858}
   serializedVersion: 2
   m_Radius: 0.5000001
+--- !u!114 &1115691079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115691071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d92f3d12332f6e48aec2bba4d0a2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1127403020 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 476893ca37405624c835218deedc81e9,
@@ -19485,6 +19537,7 @@ GameObject:
   - component: {fileID: 1508841363}
   - component: {fileID: 1508841362}
   - component: {fileID: 1508841359}
+  - component: {fileID: 1508841364}
   m_Layer: 0
   m_Name: Sigma Kira
   m_TagString: Untagged
@@ -19605,6 +19658,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.000000059604645}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1508841364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508841357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d92f3d12332f6e48aec2bba4d0a2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1518903084
 GameObject:
   m_ObjectHideFlags: 0
@@ -19839,6 +19904,7 @@ GameObject:
   - component: {fileID: 1531691603}
   - component: {fileID: 1531691602}
   - component: {fileID: 1531691601}
+  - component: {fileID: 1531691604}
   m_Layer: 0
   m_Name: Gamma Deimos
   m_TagString: Untagged
@@ -19976,6 +20042,18 @@ CircleCollider2D:
   m_Offset: {x: -0.00000047683716, y: 0.00000011920929}
   serializedVersion: 2
   m_Radius: 0.50000006
+--- !u!114 &1531691604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531691596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d92f3d12332f6e48aec2bba4d0a2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1539596091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22686,6 +22764,7 @@ GameObject:
   - component: {fileID: 1751018486}
   - component: {fileID: 1751018485}
   - component: {fileID: 1751018484}
+  - component: {fileID: 1751018487}
   m_Layer: 0
   m_Name: Zeta Beta
   m_TagString: Untagged
@@ -22822,6 +22901,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.00000035762787}
   serializedVersion: 2
   m_Radius: 0.5000002
+--- !u!114 &1751018487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751018479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d92f3d12332f6e48aec2bba4d0a2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1752065710
 GameObject:
   m_ObjectHideFlags: 0
@@ -25154,6 +25245,7 @@ GameObject:
   - component: {fileID: 1912394271}
   - component: {fileID: 1912394275}
   - component: {fileID: 1912394274}
+  - component: {fileID: 1912394276}
   m_Layer: 0
   m_Name: Alpha Aegis
   m_TagString: Untagged
@@ -25274,6 +25366,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.0031168
+--- !u!114 &1912394276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912394269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d92f3d12332f6e48aec2bba4d0a2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1914438517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26240,6 +26344,7 @@ GameObject:
   - component: {fileID: 1998373940}
   - component: {fileID: 1998373944}
   - component: {fileID: 1998373943}
+  - component: {fileID: 1998373945}
   m_Layer: 0
   m_Name: Alpha Stadia
   m_TagString: Untagged
@@ -26360,6 +26465,18 @@ PointEffector2D:
   m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
+--- !u!114 &1998373945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998373938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d92f3d12332f6e48aec2bba4d0a2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2008989125
 PrefabInstance:
   m_ObjectHideFlags: 0
