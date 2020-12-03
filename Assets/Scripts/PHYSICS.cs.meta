@@ -5,7 +5,11 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - Bullet_Emitter: {instanceID: 0}
-  - Bullet: {instanceID: 0}
+  - missle: {fileID: 9094009511398482965, guid: ebc8ef3e1eaa76c44aacba4e5ec67bf4,
+      type: 3}
+  - rbOfTank: {instanceID: 0}
+  - explosionPrefab: {fileID: 2743711473207495110, guid: f6d4adec7289c3241ac1da8b1ec4681c,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

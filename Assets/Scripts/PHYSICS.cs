@@ -64,6 +64,10 @@ public class PHYSICS : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+        if (collision.gameObject.tag == "OutOfBounds")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void ScoreIncrement()
