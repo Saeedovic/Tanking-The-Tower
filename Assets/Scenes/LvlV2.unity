@@ -400,8 +400,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet_Emitter: {fileID: 1217254132}
   missle: {fileID: 9094009511398482965, guid: ebc8ef3e1eaa76c44aacba4e5ec67bf4, type: 3}
-  spinspeed: 5
-  fastspin: 6
+  spinspeed: 3
+  fastspin: 1
   rbOfTank: {fileID: 24064141}
   forceMult: 1000
   live: 2
