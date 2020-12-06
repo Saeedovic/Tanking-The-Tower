@@ -9,6 +9,7 @@ public class deployBoulders : MonoBehaviour
     public int randMax;
     private Vector2 screenBounds;
     private float respawnTime;
+    public float spawnBoulders;
 
     // Use this for initialization
     void Start()
@@ -20,7 +21,7 @@ public class deployBoulders : MonoBehaviour
     {
         respawnTime = Random.Range(randMin, randMax);
         GameObject a = Instantiate(asteroidPrefab) as GameObject;
-        a.transform.position = new Vector2(screenBounds.x * -3, Random.Range(-screenBounds.y, screenBounds.y));
+        a.transform.position = new Vector2(screenBounds.x * spawnBoulders, Random.Range(-screenBounds.y, screenBounds.y));
         a.gameObject.tag = "Boulder";
     }
     IEnumerator AsteroidWave()
